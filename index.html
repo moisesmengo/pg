@@ -287,7 +287,7 @@
                     
                 }
 
-                @media only screen and (max-width: 550px) {
+                @media only screen and (min-width:350px) and (max-width: 550px) {
 
                     .think-area.banner-area{
                         height: 1080px;
@@ -306,7 +306,7 @@
                    }
                    .banner{
                     position: absolute;
-                    top: 10%;
+                    top: 15%;
                     margin-top: 130px;
                     left: initial;
                     width: 100%;
@@ -331,6 +331,48 @@
                    
                 }
 
+                @media only screen and (max-width: 349px) {
+                    .think-area.banner-area{
+                        height: 1080px;
+                    }
+
+                    .main{
+                        height: 100%;
+                    }
+
+                    #os_img{
+                        background-image: url("./images/bg-small.jpg");
+                        height: 1080px;
+                    }
+                     #os_img_2 {
+                       display: none;
+                   }
+                   .banner{
+                    position: absolute;
+                    top: 15%;
+                    margin-top: 130px;
+                    left: initial;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start !important;
+                    z-index: 1;
+                   }
+                   .arruma{
+                       width: 100%;
+                       padding: 0 1em;
+                   }
+                   .banner h3{
+                       font-size: 20px !important;
+                       text-align: center;
+                   }
+                   .banner h2{
+                       font-size: 25px !important;
+                       text-align: center;
+                   }
+                }
+
                  @media only screen and (max-width: 988px) {
                    .avivon-heading .t-avivon__title {
                         margin: 0 !important;
@@ -352,6 +394,8 @@
                     }
                     
                 }
+
+                
 
             </style>
 
