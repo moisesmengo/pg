@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+    <html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="UTF-8">
+        <!-- viewport meta -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        
+        <meta name="description" content="@yield('meta_description', config('app.name'))">
+        <meta name="author" content="@yield('meta_author', config('app.name'))">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="keywords" content="">
+        <title>One Seg</title>
+
+        <!-- Favicon Icon -->
+        <link rel="icon" href="images/favicon.ico"> <!-- Favicon-->
+
+        <!-- revolution slider css -->
+        <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+        <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+
+        <!-- inject:css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="css/fontello.css">
+        <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" type="text/css" href="css/magnificpopup.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- endinject -->
+
+    </head>
+    <body>
+        <div class="offcanvas-menu">
+            <div class="menu__close"></div><!-- end menu__close -->
+            <ul class="off__menu">
+                <li class="menu__title-only">
+                    <a  href="{{route('sites')}}">Início</a>
+                </li>
+                <li class="menu__title-only">
+                    <a class="link-service" href="#service">Serviços</a>
+                </li>
+                <li class="menu__title-only">
+                    <a class="link-about" href="#service">Empresa</a>
+                </li>
+                <li class="menu__title-only">
+                    <a href="{{route('posts')}}"> Blog</a>
+                </li>
+                <li class="menu__title-only">
+                    <a class="link-contact" href="#contact">Contatos</a>
+                </li>
+            </ul>
+        </div><!-- end offcanvas-menu -->
+        <!-- page preloader -->
+        <div id="loading-area">
+            <div class="three col">
+                <div class="loader" id="loader-1"></div>
+            </div>
+        </div><!-- end loading -->
+        
+
+            <!-- ================================
+                    START MENU AREA
+            ================================= -->
+            <section class="menu-area menu-area-3 ">
+                <div class="top-menu-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 menu-full-box theme-bg-light no-padding-lr">
+                                <div class="menu-full-width">
+                                    <div class="logo-box">
+                                        <div class="site-open">
+                                            <span class="open__only"></span>
+                                            <span class="open__only"></span>
+                                            <span class="open__only"></span>
+                                        </div><!-- end site-open -->
+                                        <div class="logo">
+                                            <a href="{{route('sites')}}" title="OneSeg"><img src="images/logo.png" alt="logo"></a>
+                                        </div><!-- end logo -->
+                                    </div><!-- end logo-box -->
+                                    <div class="main-menu">
+                                        <nav class="menu__wrapper">
+                                            <ul class="dropdown-main">
+                                                <li><a href="{{route('sites')}}">Início</a></li>
+                                                <li><a class="link-service" href="#service">Serviços</a></li>
+                                                <li><a class="link-about" href="#about">Empresa</a></li>
+                                                <li><a href="{{route('posts')}}"> Blog</a></li>
+                                                <li><a class="link-contact" href="#contact">Contato</a></li>
+                                            </ul>
+                                        </nav><!-- end menu__wrapper -->
+                                        <div class="logo-right-button"> 
+                                            <div class="contact-para links_navbar">
+                                                <ul >
+                                                    
+                                                        <li><a href="https://www.facebook.com/{{$social->social_face}}"><i class="fab fa-facebook-f"></i></a></li>
+                                                    
+                                                    
+                                                        <li><a href="https://www.instagram.com/{{$social->social_instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                                    
+                                                    
+                                                        <li><a href="https://www.linkedin.com/{{$social->social_twitter}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                                    
+                                                </ul>
+                                            </div><!-- end contact-para -->
+                                        </div><!-- end logo-right-button -->
+                                    </div><!-- end main-menu -->
+                                </div><!-- end menu-full-width -->
+                            </div><!-- end col-log-12 -->
+                        </div><!-- end row -->
+                    </div><!-- end container -->
+                </div><!-- end top-menu-area -->
+            </section><!-- end menu-area -->
+
+
+
+     <!--================================
+             START BANNER AREA
+    =================================-->
+    <section class="trusted-area breadcrumb-area text-center">
+        <div class="trusted-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="trusted-content">
+                            <div class="trusted__title">
+                                <ul class="bread__rumb-item">
+                                    <li class="active-item"><a href="index.html">home</a></li>
+                                    <li>blog</li>
+                                </ul>
+                                <h2 class="trusted__title-title"> Blog</h2>
+                            </div><!-- end trusted__title -->
+                        </div><!-- end trusted-content -->
+                    </div><!-- end col-md-12 -->
+                </div><!-- end row -->
+            </div><!-- container -->
+        </div><!-- end trusted-fluid -->
+    </section><!-- end trusted-area -->
+
+
+    <style>
+        .pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: orange;
+    border-color: #orange;
+}
+
+.footer-area .footer-list .footer-shared .ftp__links ul li a {
+    color: #FFF;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 17px;
+    display: block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+    </style>
+ 
+    <!--================================
+          END BANNER AREA
+    =================================-->
+    
+    <!--================================
+            START BLOG AREA
+    =================================-->
+    <section class="blog-area responsive-content area-padding text-left">
+        <div class="blog-fluid">
+            <div class="container">
+                <div class="row service-box blog-box">
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+
+                       <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+
+                       <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                        <div class="shared-service">
+                            <div class="shared__img">
+                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                    <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                </a>
+                                <div class="shared__date-item">
+                                    <span>10</span>
+                                    <span>Fev</span>
+                                </div>
+                            </div><!-- end shared-__img -->
+                            <div class="shared-content mb-10px">
+                                <div class="service__title mb-30px">
+                                    <h3 class="service__title-title">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                            In publishing and graphic design,
+                                        </a>
+                                    </h3>
+                                </div><!-- end service__title -->
+                                <div class="service__desc mb-35px">
+                                    <p class="service__desc-desc">
+                                        demonstrate the visual form of a document  &nbsp;...
+                                    </p>
+                                </div><!-- end service__desc -->
+                                <div class="service__more">
+                                    <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">Leia mais <span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end service__desc -->
+                            </div><!-- end shared-content -->
+                        </div><!-- end shared-service -->
+                    </div><!-- end col-md-4 -->
+                    
+                </div><!-- end row -->
+                
+            </div><!-- container -->
+        </div><!-- end blog-fluid -->
+    </section><!-- end blog-area -->
+    
+
+
+    <style>
+        .footer-area .footer-list .footer-shared .ftp__links ul li a {
+            color: #FFF;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 17px;
+            display: block;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+            .footer-area .footer-list .footer-shared .ftp__links .ftp__form-subs form input {
+            background-color: #783032;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            padding: 15px 26px;
+            border: 1px solid #783032;
+            width: 100%; }
+        
+            .footer-area .footer-list .footer-shared .ftp__links .ftp__form-subs {
+                background-color: #6B3436;
+                padding: 30px 40px 40px 40px;
+                margin-top: 50px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+            }
+        
+            .footer-area .footer-list .footer-shared .ftp__links .ftp__form-subs .ftp__links-desc__desc {
+                  color: #fff;
+                  font-weight: 600;
+                  font-size: 15px;
+                  margin-bottom: 30px; }
+        
+            .alert-form-footer{
+                color:#FFF;
+                font-weight: bold;
+            }
+        
+    </style>
+          <!-- start scroll top --->
+          <div id="scroll-top">
+            <i class="fas fa-arrow-up" title="Go top"></i>
+        </div>
+        <section class="footer-area responsive-content theme-bg-dark" id="contact">
+            <div class="footer-fluid">
+                <div class="container">
+                    <div class="row footer-list">
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                            <div class="footer-shared">
+                                <div class="footer__title">
+                                    <h3 class="footer__title-title">Fale conosco</h3>
+                                </div><!-- end footer__title -->
+                                <div class="ftp__links">
+                                    <div class="ftp__form-subs">
+                                  
+                                        <p class="ftp__links-desc__desc">Invista em novas atitudes! Vem com a gente!</p>
+                                        <form  action="{{ route('contacts.footer') }}" method="POST" >
+                                           
+                                            <input type="hidden" name="company_email" value="">
+                                            <div>
+                                                <div class="form-group">
+                                                    <input type="text" name="name" class="form-control"  value="" placeholder="Nome">
+                                                </div>
+                                            </div>
+                                         
+        
+                                            <div>
+                                            <div class="form-group">
+                                                    <input type="email" name="email" class="form-control" value="" placeholder="Email">
+                                                </div>
+                                            </div>
+                                          
+                                      
+        
+                                            <div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control"  name="message" placeholder="Mensagem">
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="form-group pt-10px">
+                                                    <button type="submit" class="btn btn-danger">Enviar</button>
+                                            </div>
+                                        </form>
+                                    </div><!-- end ftp__form-subs -->
+                                </div><!-- end ftp__links -->
+                            </div><!-- end footer-shared -->
+                        </div><!-- end col-md-3 -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-shared">
+                                <div class="footer__title">
+                                    <h3 class="footer__title-title">Links úteis</h3>
+                                </div><!-- end footer__title -->
+                                <div class="ftp__links menu__links clearfix">
+                                    <ul class="ftp__menu-links pull-left">
+                                        <li><a href="{{route('sites')}}">Início</a></li>
+                                        <li><a class="link-service" href="#service">Serviços</a></li>
+                                        <li><a class="link-about" href="#about">Empresa</a></li>
+                                        <li><a href="{{route('posts')}}">Blog</a></li>
+                                        <li><a class="link-contact"  href="#contact">Contatos</a></li>
+                                        <li><a href="{{route('dashboard.index')}}">login</a></li>
+                                    </ul>
+                                </div><!-- end ftp__links -->
+                            </div><!-- end footer-shared -->
+                        </div><!-- end col-md-4 -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-shared">         
+                                <div class="footer__title">
+                                    <h3 class="footer__title-title">Endereço</h3>
+                                </div><!-- end footer__title -->
+                                <div class="ftp__links menu__links clearfix">
+                                    <address>
+                                       
+                                           Rua xxxx  <br>
+                                        
+                                       
+                                            Número: 458<br>
+                                       
+                                       
+                                            Complemento <br>
+                                   
+                                        <abbr title="Phone">tel:</abbr>
+                                       
+                                            (254) 8558-5844<br>
+                                        
+                                        <br>
+                                    </address>
+                                    <a class="mt-10px" style="color:#fff;"><i class="fas fa-envelope ml-10px"></i> 
+                                       
+                                                contato@oneseg.com.br<br>
+                                        
+                                    </a>
+                                </div><!-- end ftp__links -->
+                            </div><!-- end footer-shared -->
+                        </div><!-- end col-md-5 -->
+                    </div><!-- end row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright-shared">
+                                <div class="col-md-8 no-padding-lr>
+                                    <p class="copy__desc">&copy;Copyright <?php echo date('Y'); ?> Awee Business 2021 Todos os Direitos Reservados.</p>
+                                </div><!-- end col-md-8 -->
+                                <div class="col-md-4 text-right no-padding-lr">
+                                    <ul class="copy__links">
+                                       
+                                            <li><a href="https://www.facebook.com/{{$social->social_face}}"><i class="fab fa-facebook-f"></i></a></li>
+                                      
+                                     
+                                            <li><a href="https://www.instagram.com/{{$social->social_instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                    
+                                       
+                                            <li><a href="https://www.linkedin.com/{{$social->social_twitter}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                      
+                                    </ul>
+                                </div><!-- end col-md-4 -->
+                            </div><!-- end copyright-shared -->
+                        </div><!-- end col-md-12 -->
+                    </div><!-- end row -->
+                </div><!-- container -->
+            </div><!-- end footer-fluid -->
+        </section><!-- end footer-area -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/magnificpopup.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    
+    <!-- Slider Revolution core JavaScript files -->
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="js/rev-slider-script-2.js"></script>
+    <script>
+    // counter up
+    $('.counter').counterUp({
+    delay: 50,
+    time: 5000
+    });
+    </script>
+    
+    </body>
+    </html>
+
+
+
+
+

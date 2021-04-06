@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+    <html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="UTF-8">
+        <!-- viewport meta -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        
+        <meta name="description" content="@yield('meta_description', config('app.name'))">
+        <meta name="author" content="@yield('meta_author', config('app.name'))">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="keywords" content="">
+        <title>One Seg</title>
+
+        <!-- Favicon Icon -->
+        <link rel="icon" href="images/favicon.ico"> <!-- Favicon-->
+
+        <!-- revolution slider css -->
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/revolution/css/settings.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/revolution/css/navigation.css">
+
+        <!-- inject:css -->
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/css/fontello.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/css/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/css/owl.theme.default.min.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/css/magnificpopup.css">
+        <link rel="stylesheet" type="text/css" href="https://oneseg.oxbrand.com.br/css/style.css">
+        <!-- endinject -->
+
+    </head>
+    <body>
+        <div class="offcanvas-menu">
+            <div class="menu__close"></div><!-- end menu__close -->
+            <ul class="off__menu">
+                <li class="menu__title-only">
+                    <a  href="{{route('sites')}}">Início</a>
+                </li>
+                <li class="menu__title-only">
+                    <a class="link-service" href="#service">Serviços</a>
+                </li>
+                <li class="menu__title-only">
+                    <a class="link-about" href="#service">Empresa</a>
+                </li>
+                <li class="menu__title-only">
+                    <a href="{{route('posts')}}"> Blog</a>
+                </li>
+                <li class="menu__title-only">
+                    <a class="link-contact" href="#contact">Contatos</a>
+                </li>
+            </ul>
+        </div><!-- end offcanvas-menu -->
+        <!-- page preloader -->
+        <div id="loading-area">
+            <div class="three col">
+                <div class="loader" id="loader-1"></div>
+            </div>
+        </div><!-- end loading -->
+        
+        <div class="modal fade bd-example-modal-lg" id="one_service_modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="think-fluid think-area">
+                            <div class="container">
+                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                    <div class="choose-same text-center mt-30px">
+                                        <div class="choose__title">
+                                            <h3>Assessoria e criação da estrutura de uma corretora de seguros</h3>
+                                        </div><!-- end choose__title -->
+                                        <div class="choose__desc mt-30px mb-40px">
+                                            <p class="text-left pb-10px"> 
+                                                Montamos toda a estrutura e funcionalidade operacional de uma corretora de seguros dentro do seu escritório de investimentos. Uma frente a mais não só de prospecção, crescimento, fidelização com o cliente, mas também o aumento recorrente da receita do escritório.
+                                            </p>
+                                            <ul class="text-left" style="list-style-type: circle;">
+                                                <li>Cadastro e certificação</li>
+                                                <li>Gestão e Planejamento</li>
+                                                <li>Treinamento Comercial e Técnico</li>
+                                                <li>Time comercial de seguros para atendimento</li>
+                                                <li>Acompanhamento Comercial</li>
+                                            </ul>
+                                        </div><!-- end choose__desc -->
+                                    </div><!-- end choose-same -->
+                                    <div class="avivon-btn text-center mb-40px">
+                                        <a href="#" class="avivon__btn" data-dismiss="modal">Fechar<span class="fontello icon-angle-double-right"></span></a>
+                                    </div><!-- end avivon-btn -->
+                                </div><!-- end col-md-4 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="modal fade bd-example-modal-lg" id="one_service_modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="think-fluid think-area">
+                            <div class="container">
+                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                    <div class="choose-same text-center mt-30px">
+                                        <div class="choose__title">
+                                            <h3>Gestão e Acompanhamento</h3>
+                                        </div><!-- end choose__title -->
+                                        <div class="choose__desc mt-30px mb-40px">
+                                            <p> 
+                                                Acompanhamos seu crescimento, orientamos o seu comercial, criamos estratégias, objetivos e metas, educando o profissional e lapidando sua equipe de acordo com a missão, perfil e valores do seu escritório.
+                                            </p>
+                                        </div><!-- end choose__desc -->
+                                    </div><!-- end choose-same -->
+                                    <div class="avivon-btn text-center mb-40px">
+                                        <a href="#" class="avivon__btn" data-dismiss="modal">Fechar<span class="fontello icon-angle-double-right"></span></a>
+                                    </div><!-- end avivon-btn -->
+                                </div><!-- end col-md-4 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="modal fade bd-example-modal-lg" id="one_service_modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="think-fluid think-area">
+                            <div class="container">
+                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                    <div class="choose-same text-center mt-30px">
+                                        <div class="choose__title">
+                                            <h3>Consultoria do Modelo Atual</h3>
+                                        </div><!-- end choose__title -->
+                                        <div class="choose__desc mt-30px mb-40px">
+                                            <p class="text-left pb-10px"> 
+                                                Se o seu escritório de investimentos já possui uma estrutura de seguros, mas não está atingindo um resultado satisfatório, também podemos te ajudar prestando uma consultoria, avaliando o modelo atual e trazendo soluções e adaptações para que essa realidade mude e consequentemente o crescimento da receita comece a aparecer.
+                                            </p>
+                                            <ul class="text-left" style="list-style-type: circle;">
+                                                <li>Avaliação e/ou criação do plano de negócios.</li>
+                                                <li>Análise do modelo de gestão.</li>
+                                                <li>Criação de metas e objetivos.</li>
+                                                <li>Treinamento comercial e técnico.</li>
+                                                <li>Avaliação do time comercial.</li>
+                                            </ul>
+                                        </div><!-- end choose__desc -->
+                                    </div><!-- end choose-same -->
+                                    <div class="avivon-btn text-center mb-40px">
+                                        <a href="#" class="avivon__btn" data-dismiss="modal">Fechar<span class="fontello icon-angle-double-right"></span></a>
+                                    </div><!-- end avivon-btn -->
+                                    
+                                </div><!-- end col-md-4 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="modal fade bd-example-modal-lg" id="one_service_modal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="think-fluid think-area">
+                            <div class="container">
+                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                    <div class="choose-same text-center mt-30px">
+                                        <div class="choose__title">
+                                            <h3>Treinamentos e Eventos em Seguros</h3>
+                                        </div><!-- end choose__title -->
+                                        <div class="choose__desc mt-30px mb-40px">
+                                            <p class="text-left pb-10px">Plataforma de treinamentos em seguros, planejamento financeiro, sucessório e patrimonial. Tudo para o seu time comercial.</p>
+                                        </div><!-- end choose__desc -->
+                                    </div><!-- end choose-same -->
+                                    <div class="avivon-btn text-center mb-40px">
+                                        <a href="#" class="avivon__btn" data-dismiss="modal">
+                                            Fechar<span class="fontello icon-angle-double-right"></span>
+                                        </a>
+                                    </div><!-- end avivon-btn -->
+                                    
+                                </div><!-- end col-md-4 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- ================================
+                    START MENU AREA
+            ================================= -->
+            <section class="menu-area menu-area-3 ">
+                <div class="top-menu-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 menu-full-box theme-bg-light no-padding-lr">
+                                <div class="menu-full-width">
+                                    <div class="logo-box">
+                                        <div class="site-open" style="color: #FF9700;">
+                                            <span class="open__only"></span>
+                                            <span class="open__only"></span>
+                                            <span class="open__only"></span>
+                                        </div><!-- end site-open -->
+                                        <div class="logo">
+                                            <a href="{{route('sites')}}" title="OneSeg"><img src="images/logo.png" alt="logo"></a>
+                                        </div><!-- end logo -->
+                                    </div><!-- end logo-box -->
+                                    <div class="main-menu">
+                                        <nav class="menu__wrapper">
+                                            <ul class="dropdown-main">
+                                                <li><a href="{{route('sites')}}">Início</a></li>
+                                                <li><a class="link-service" href="#service">Serviços</a></li>
+                                                <li><a class="link-about" href="#about">Empresa</a></li>
+                                                <li><a href="{{route('posts')}}"> Blog</a></li>
+                                                <li><a class="link-contact" href="#contact">Contato</a></li>
+                                            </ul>
+                                        </nav><!-- end menu__wrapper -->
+                                        <div class="logo-right-button"> 
+                                            <div class="contact-para links_navbar">
+                                                <ul >
+                                                    
+                                                        <li><a href="https://www.facebook.com/{{$social->social_face}}"><i class="fab fa-facebook-f"></i></a></li>
+                                                    
+                                                    
+                                                        <li><a href="https://www.instagram.com/{{$social->social_instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                                    
+                                                    
+                                                        <li><a href="https://www.linkedin.com/{{$social->social_twitter}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                                    
+                                                </ul>
+                                            </div><!-- end contact-para -->
+                                        </div><!-- end logo-right-button -->
+                                    </div><!-- end main-menu -->
+                                </div><!-- end menu-full-width -->
+                            </div><!-- end col-log-12 -->
+                        </div><!-- end row -->
+                    </div><!-- end container -->
+                </div><!-- end top-menu-area -->
+            </section><!-- end menu-area -->
+            <!--================================
+                     START REV SLIDER AREA
+            =================================-->
+
+            <style>
+                body{
+                   overflow-x: hidden
+                }
+                .think--area .think-column-box .think-boxed{
+                    height: auto;
+                    padding: 10px !important;
+                }
+                
+                .banner{
+                    position: absolute;
+                    top: 50%;
+                    left: 3em;
+                }
+                
+                @media only screen and (min-width: 900px) and (max-width: 1150px) {
+                   
+                }
+
+                @media only screen and (min-width: 788px) and (max-width: 899px) {
+                    
+                   .arruma{
+                       max-width: 80%;
+                   }
+                   #os_img_2{
+                       left: 20%;
+                       right: initial;
+                   }
+
+                                  
+                }
+
+                @media only screen and (min-width: 551px) and (max-width: 787px) {
+                    .arruma{
+                       max-width: 80%;
+                   }
+                    #os_img_2{
+                       left: 20%;
+                       right: initial;
+                   }
+                    
+                }
+
+                @media only screen and (max-width: 550px) {
+
+                    .think-area.banner-area{
+                        height: 100vh;
+                    }
+
+                     #os_img_2{
+                       left: 20%;
+                       right: initial;
+                       bottom: 0;
+                       position: initial;
+                       bottom: 0 i !important;
+                       height: 40% !important;
+                   }
+                   .banner{
+                    position: absolute;
+                    top: 25%;
+                    left: initial;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start !important;
+                   }
+                   .arruma{
+                       width: 100%;
+                       padding: 0 1em;
+                   }
+                   .banner h3{
+                       font-size: 20px !important;
+                       text-align: center;
+                   }
+                   .banner h2{
+                       font-size: 25px !important;
+                       text-align: center;
+                   }
+                   
+                }
+
+                 @media only screen and (max-width: 988px) {
+                   .avivon-heading .t-avivon__title {
+                        margin: 0 !important;
+                        padding: 20px;
+                        margin-left: 20px;
+                        background-color: #6cd4ff;
+                    }
+                    .avivon-heading{
+                        margin-top: 20px;
+                    }
+                    .one_btn{
+                        margin: 0;
+                        padding-left: 20px;
+                        padding-bottom: 20px;
+                        background-color: #6cd4ff;
+                    }
+                    .text-fower{
+                        padding: 0;
+                    }
+                    
+                }
+
+            </style>
+
+           <div class="think-area banner-area " id="os_img" >
+                <img src="./images/fundo-m-invertido.png" id="os_img_2" 
+                style="height: 87%; position: absolute; bottom: 0; right: 0;">
+                <div class="banner">
+                    <h3 style="color: white; font-weight: bold; font-size: 28px;
+                                text-shadow: black 0.4em 0.2em 0.8em;"><fontsninja-text id="fontsninja-text-133" class="fontsninja-family-1638">AMPLIE SEU OLHAR!</fontsninja-text></h3>
+                    <h2 class="arruma" style="color: white; font-weight: 32px; font-weight: 900; margin-top: 25px; margin-bottom: 25px;
+                                text-shadow: black 0.4em 0.2em 0.8em;"><fontsninja-text id="fontsninja-text-134" class="fontsninja-family-1640">ASSESSORIA PARA CRIAÇÃO DE CORRETORAS DE SEGUROS EM ESCRITÓRIOS DE INVESTIMENTOS.</fontsninja-text></h2>
+                    <div class="avivon-btn">
+                        <a href="#contact" class="avivon__btn link-contact"><fontsninja-text id="fontsninja-text-136" class="fontsninja-family-1638">
+                            Vamos lá</fontsninja-text><span class="fontello icon-angle-double-right"></span><fontsninja-text id="fontsninja-text-136" class="fontsninja-family-1638">
+                        </fontsninja-text></a>
+                    </div><!-- end avivon-btn -->
+                        
+                </div>
+            </div>
+            <!-- end rev-slider-2 -->
+            <!--================================
+                      START THINK AREA
+            =================================-->
+            <section class="think-area responsive-content think--area area-padding" id="service">
+                <div class="think-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center row-no-gutters">
+                                <div class="avivon-heading inspire-title2 mb-40px">
+                                    <h2 class="avivon__title third__title">Somos empreendedores iguais a você! Falamos a mesma língua! Legal isso né?</h2>
+                                </div><!-- end avivon-heading -->
+                                <div class="avivon-btn">
+                                    <a href="#contact" class="avivon__btn link-contact">
+                                        Vamos conversar!<span class="fontello icon-angle-double-right"></span>
+                                    </a>
+                                </div><!-- end avivon-btn -->
+                            </div><!-- end col-md-12 -->
+                        </div><!-- end row -->
+                        <div class="row">
+                            
+                            <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                <div class="card  text-left p-3 one_service_b2">
+                                    <div class="think-column-box boxed-bg-2">
+                                        <a href="#"  data-toggle="modal" data-target="#one_service_modal2">
+                                            <div class="think-boxed">
+                                                <h3 class="boxed__btn  mb-15px" style="font-size: 24px">Assessoria e criação da estrutura de uma corretora de seguros</h3>
+                                                <a href="#"  data-toggle="modal" data-target="#one_service_modal2" class="boxed__btn">Quero saber mais!
+                                                    <span class="icon-angle-double-right" aria-hidden="true"></span>
+                                                </a>
+                                            </div><!-- end think-boxed -->
+                                        </a>
+                                    </div><!-- end think-column -->
+                                </div>
+                            </div><!-- end col-md-4 -->
+                            
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="card text-left p-3 one_service_b3">
+                                    <div class="think-column-box boxed-bg-3">
+                                        <a href="#"  data-toggle="modal" data-target="#one_service_modal4">
+                                            <div class="think-boxed">
+                                                <h3 class="boxed__btn mb-15px"  style="font-size: 24px">Consultoria do Modelo Atual</h3>
+                                                <a href="#"  data-toggle="modal" data-target="#one_service_modal4" class="boxed__btn">Quero saber mais!<span class="icon-angle-double-right"></span></a>
+                                            </div><!-- end think-boxed -->
+                                        </a>
+                                    </div><!-- end think-column -->
+                                </div>
+                            </div><!-- end col-md-4 -->
+    
+                             <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="card  text-left p-3 one_service_b2">
+                                    <div class="think-column-box boxed-bg-4">
+                                        <a href="#"  data-toggle="modal" data-target="#one_service_modal3">
+                                            <div class="think-boxed">
+                                                <h3 class="boxed__btn  mb-15px" style="font-size: 24px">Gestão e Acompanhamento</h3>
+                                                <a href="#"  data-toggle="modal" data-target="#one_service_modal3" class="boxed__btn">Quero saber mais!
+                                                    <span class="icon-angle-double-right"></span>
+                                                </a>
+                                            </div><!-- end think-boxed -->
+                                        </a>
+                                    </div><!-- end think-column -->
+                                </div>
+                            </div><!-- end col-md-4 -->
+    
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="card text-left p-3 one_service_b3">
+                                    <div class="think-column-box boxed-bg-5">
+                                        <a href="#"  data-toggle="modal" data-target="#one_service_modal5">
+                                            <div class="think-boxed">
+                                                <h3 class="boxed__btn mb-15px"  style="font-size: 24px">Treinamentos e Eventos em Seguros</h3>
+                                                <a href="#"  data-toggle="modal" data-target="#one_service_modal5" class="boxed__btn">Quero saber mais!<span class="icon-angle-double-right"></span></a>
+                                            </div><!-- end think-boxed -->
+                                        </a>
+                                    </div><!-- end think-column -->
+                                </div>
+                            </div><!-- end col-md-4 -->
+                            
+                        </div><!-- end row -->
+                    </div><!-- end container -->
+                </div><!-- end think-fluid -->
+            </section><!-- end think-area -->
+            <!--================================
+                     END THINK AREA
+            =================================-->
+            <section class="row think-area">
+                <div class="blue-flower">
+                    <div class="bimg">
+                        <div class="flower">
+                            <div class="bimg">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-fower mt-50px ml-20px">
+                                    <div class="avivon-heading p-3  " style="width: 100%;">
+                                        <h2 class="t-avivon__title" style="width: 100%; font-size: 32px;" >
+                                            Hey! Estamos aqui para poupar seu tempo, gerar satisfação e crescimento de receita para sua empresa. Continue focando naquilo que você faz melhor e deixe a gestão de seguros por nossa conta!<br>
+                                        </h2>
+                                        
+                                        <div class="avivon-btn one_btn">
+                                            <a href="#contact" class="avivon__btn link-contact">
+                                                BORA<span class="fontello icon-angle-double-right"></span>
+                                            </a>
+                                        </div><!-- end avivon-btn -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
+                                    <img class="pull-right" src="images/c_flower.png" alt="">                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--================================
+                      START CHOOSE AREA
+            =================================-->
+            <section class="choose-area responsive-content choose--area avivon-pt section-pb text-center">
+                <div class="choose-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 primary-padding">
+                                <div class="avivon-heading">
+                                    <h2 class="avivon__title fourth__title">WOW que máximo! Agora que você ampliou seu olhar e tem a quem recorrer, vamos juntos conquistar esse mercado!</h2>
+                                </div><!-- end avivon-heading -->
+                            </div><!-- end col-md-12 -->
+                        </div><!-- end row -->
+                        <div class="row choose-content section-pb">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="choose-same">
+                                    <div class="choose__icon">
+                                        <span class="fontello icon-chart"></span>
+                                    </div><!-- end choose__icon -->
+                                    <div class="choose__title">
+                                        <h3>Inteligência Em Processos</h3>
+                                    </div><!-- end choose__title -->
+                                    <div class="choose__desc">
+                                        <p>Estaremos com você em cada etapa do planejamento.
+                                        De A à Z. Conte com a OneSeg!</p>
+                                    </div><!-- end choose__desc -->
+                                </div><!-- end choose-same -->
+                            </div><!-- end col-md-4 -->
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="choose-same">
+                                    <div class="choose__icon">
+                                        <span class="fontello icon-exploration"></span>
+                                    </div><!-- end choose__icon -->
+                                    <div class="choose__title">
+                                        <h3>De Olho Nas Mudanças Globais</h3>
+                                    </div><!-- end choose__title -->
+                                    <div class="choose__desc">
+                                        <p>Estamos em constante atualização sobre as mudanças do mercado, fazendo com que cada decisão tomada seja feita com muita responsabilidade!</p>
+                                    </div><!-- end choose__desc -->
+                                </div><!-- end choose-same -->
+                            </div><!-- end col-md-4 -->
+                            <div class="col-md-4 col-sm-6 col-xs-12 col-lg-offset-0 col-md-offset-0 col-sm-offset-3 col-xs-offset-0">
+                                <div class="choose-same rpl-content">
+                                    <div class="choose__icon">
+                                        <span class="fontello  icon-options"></span>
+                                    </div><!-- end choose__icon -->
+                                    <div class="choose__title">
+                                        <h3>Planejamento Estratégico</h3>
+                                    </div><!-- end choose__title -->
+                                    <div class="choose__desc">
+                                        <p>20 anos de experiência. É isso que te oferecemos!!
+                                         Quando se trata de dinheiro, precisamos de segurança e 
+                                         confiança!</p>
+                                    </div><!-- end choose__desc -->
+                                </div><!-- end choose-same -->
+                            </div><!-- end col-md-4 -->
+                        </div><!-- end row -->
+                        
+                        <div class="row">
+                            <div class="col-md-12 choose-box">
+                                <div class="choose-popup" id="about">
+                                    <img src="images/image_about_oneseg.png" alt="One Seg. Fundadoras Ale Bussab & Carol Amorim">
+                                    <p class="offer__desc mt-50px mb-50px">
+                                        Atuando há mais de 20 anos no mercado de seguros, previdência e investimentos, 
+                                        mercado este em constante mutação e aprimoramento, 
+                                        as sócias da OneSeg sentiram a necessidade de desenvolver algo 
+                                        inovador no mercado de corretagem de seguros. <br><br>
+                                        Apesar de secular, o universo de seguros permanece ainda desconhecido para uma maioria, nesse sentido nossa atuação busca levar conhecimento e esclarecimento não somente a todos os nossos clientes, mas também embasar a atuação dos profissionais de seguros, para que consolidem seu trabalho dentro dos escritórios de investimentos. 
+                                        <br><br>
+                                        Dessa necessidade surgiu a OneSeg com uma proposta diferenciada. Assessorar escritórios na estruturação de uma corretora de seguros, desde operacional à comercialização, gestão, educação e formação do profissional, de acordo com a missão, perfil e os valores do escritório.
+                                    </p>
+                                    <h3 class="quote__sign"> Ale Bussab & Carol Amorim</h3>
+                                </div><!-- end choose-popup -->
+                            </div><!-- end col-md-12 -->
+                        </div><!-- end row -->
+                    </div><!-- container -->
+                </div><!-- end choose-fluid -->
+            </section><!-- end choose-area -->      
+            <!--================================
+                      START MEET AREA
+             =================================-->
+            <section class="meet-area start-area padding theme-bg-main">
+                <div class="meet-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="meet-heading text-center">
+                                    <h2 class="start__title">Invista em novas atitudes! Vem com a gente!</h2>
+                                        <div class="avivon-btn ">
+                                            <a href="#contact" class="meet__btn link-contact">Bora!
+                                                <span class="fontello icon-angle-double-right"></span>
+                                            </a>
+                                        </div>
+                                </div><!-- end meet-heading -->
+                            </div><!-- end col-md-12 -->
+                        </div><!-- end row -->
+                    </div><!-- container -->
+                </div><!-- end meet-fluid -->
+            </section><!-- end meet-area -->
+            <!--================================
+                      END MEET AREA
+            =================================-->
+            <section class="blog-area responsive-content area-padding theme-bg-gray">
+                <div class="blog-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 primary-padding-2 text-center">
+                                <div class="avivon-heading">
+                              
+                                    <h2 class="avivon__title">BLOG</h2>
+                              
+                                </div><!-- end avivon-heading -->
+                            </div><!-- end col-md-12 -->
+                        </div><!-- end row -->
+                        <div class="row service-box blog-box text-left">
+                            
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="shared-service">
+                                    <div class="shared__img">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                             <img src="images/man-four.jpg" alt="{{ $post->title }}">
+                                        </a>
+                                        <div class="shared__date-item">
+                                            <span>09 </span>
+                                            <span>Fev</span>
+                                        </div>
+                                    </div><!-- end shared-__img -->
+                                    <div class="shared-content">
+                                        <div class="service__title mb-30px">
+                                            <h3 class="service__title-title">
+                                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                                    About Lorem Ipsum
+                                                </a>
+                                            </h3>
+                                        </div><!-- end service__title -->
+                                        <div class="service__desc mb-35px">
+                                            <p class="service__desc-desc">
+                                                In publishing and graphic design, Lorem ipsum is a placeholder text commonly 
+                                            </p>
+                                        </div><!-- end service__desc -->
+                                        <div class="service__more">
+                                            <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">
+                                                leia mais <span class="fontello icon-angle-double-right"></span>
+                                            </a>
+                                        </div><!-- end service__desc -->
+                                    </div><!-- end shared-content -->
+                                </div><!-- end shared-service -->
+                            </div><!-- end col-md-4 -->
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="shared-service">
+                                    <div class="shared__img">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                             <img src="images/man-three.jpg" alt="{{ $post->title }}">
+                                        </a>
+                                        <div class="shared__date-item">
+                                            <span>09 </span>
+                                            <span>Fev</span>
+                                        </div>
+                                    </div><!-- end shared-__img -->
+                                    <div class="shared-content">
+                                        <div class="service__title mb-30px">
+                                            <h3 class="service__title-title">
+                                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                                    About Lorem Ipsum
+                                                </a>
+                                            </h3>
+                                        </div><!-- end service__title -->
+                                        <div class="service__desc mb-35px">
+                                            <p class="service__desc-desc">
+                                                In publishing and graphic design, Lorem ipsum is a placeholder text commonly 
+                                            </p>
+                                        </div><!-- end service__desc -->
+                                        <div class="service__more">
+                                            <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">
+                                                leia mais <span class="fontello icon-angle-double-right"></span>
+                                            </a>
+                                        </div><!-- end service__desc -->
+                                    </div><!-- end shared-content -->
+                                </div><!-- end shared-service -->
+                            </div><!-- end col-md-4 -->
+
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="shared-service">
+                                    <div class="shared__img">
+                                        <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                             <img src="images/man-two.jpg" alt="{{ $post->title }}">
+                                        </a>
+                                        <div class="shared__date-item">
+                                            <span>09 </span>
+                                            <span>Fev</span>
+                                        </div>
+                                    </div><!-- end shared-__img -->
+                                    <div class="shared-content">
+                                        <div class="service__title mb-30px">
+                                            <h3 class="service__title-title">
+                                                <a href="{{route('posts.single', ['post' => $post->id])}}">
+                                                    About Lorem Ipsum
+                                                </a>
+                                            </h3>
+                                        </div><!-- end service__title -->
+                                        <div class="service__desc mb-35px">
+                                            <p class="service__desc-desc">
+                                                In publishing and graphic design, Lorem ipsum is a placeholder text commonly 
+                                            </p>
+                                        </div><!-- end service__desc -->
+                                        <div class="service__more">
+                                            <a href="{{route('posts.single', ['post' => $post->id])}}" class="service__more-btn">
+                                                leia mais <span class="fontello icon-angle-double-right"></span>
+                                            </a>
+                                        </div><!-- end service__desc -->
+                                    </div><!-- end shared-content -->
+                                </div><!-- end shared-service -->
+                            </div><!-- end col-md-4 -->
+                            
+                        </div><!-- end row -->
+                    </div><!-- container -->
+                </div><!-- end blog-fluid -->
+            </section>
+
+            <style>
+                .footer-area .footer-list .footer-shared .ftp__links ul li a {
+                    color: #FFF;
+                    font-weight: 600;
+                    font-size: 15px;
+                    margin-bottom: 17px;
+                    display: block;
+                    -webkit-transition: all 0.3s;
+                    -moz-transition: all 0.3s;
+                    -ms-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+                    .footer-area .footer-list .footer-shared .ftp__links .ftp__form-subs form input {
+                    background-color: #783032;
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 15px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    display: inline-block;
+                    padding: 15px 26px;
+                    border: 1px solid #783032;
+                    width: 100%; }
+                
+                    .footer-area .footer-list .footer-shared .ftp__links .ftp__form-subs {
+                        background-color: #6B3436;
+                        padding: 30px 40px 40px 40px;
+                        margin-top: 50px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        border-radius: 5px;
+                    }
+                
+                    .footer-area .footer-list .footer-shared .ftp__links .ftp__form-subs .ftp__links-desc__desc {
+                          color: #fff;
+                          font-weight: 600;
+                          font-size: 15px;
+                          margin-bottom: 30px; }
+                
+                    .alert-form-footer{
+                        color:#FFF;
+                        font-weight: bold;
+                    }
+                
+            </style>
+                  <!-- start scroll top --->
+                  <div id="scroll-top">
+                    <i class="fas fa-arrow-up" title="Go top"></i>
+                </div>
+                <section class="footer-area responsive-content theme-bg-dark" id="contact">
+                    <div class="footer-fluid">
+                        <div class="container">
+                            <div class="row footer-list">
+                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                    <div class="footer-shared">
+                                        <div class="footer__title">
+                                            <h3 class="footer__title-title">Fale conosco</h3>
+                                        </div><!-- end footer__title -->
+                                        <div class="ftp__links">
+                                            <div class="ftp__form-subs">
+                                          
+                                                <p class="ftp__links-desc__desc">Invista em novas atitudes! Vem com a gente!</p>
+                                                <form  action="{{ route('contacts.footer') }}" method="POST" >
+                                                   
+                                                    <input type="hidden" name="company_email" value="">
+                                                    <div>
+                                                        <div class="form-group">
+                                                            <input type="text" name="name" class="form-control"  value="" placeholder="Nome">
+                                                        </div>
+                                                    </div>
+                                                 
+                
+                                                    <div>
+                                                    <div class="form-group">
+                                                            <input type="email" name="email" class="form-control" value="" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                  
+                                              
+                
+                                                    <div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"  name="message" placeholder="Mensagem">
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="form-group pt-10px">
+                                                            <button type="submit" class="btn btn-danger">Enviar</button>
+                                                    </div>
+                                                </form>
+                                            </div><!-- end ftp__form-subs -->
+                                        </div><!-- end ftp__links -->
+                                    </div><!-- end footer-shared -->
+                                </div><!-- end col-md-3 -->
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="footer-shared">
+                                        <div class="footer__title">
+                                            <h3 class="footer__title-title">Links úteis</h3>
+                                        </div><!-- end footer__title -->
+                                        <div class="ftp__links menu__links clearfix">
+                                            <ul class="ftp__menu-links pull-left">
+                                                <li><a href="{{route('sites')}}">Início</a></li>
+                                                <li><a class="link-service" href="#service">Serviços</a></li>
+                                                <li><a class="link-about" href="#about">Empresa</a></li>
+                                                <li><a href="{{route('posts')}}">Blog</a></li>
+                                                <li><a class="link-contact"  href="#contact">Contatos</a></li>
+                                                <li><a href="{{route('dashboard.index')}}">login</a></li>
+                                            </ul>
+                                        </div><!-- end ftp__links -->
+                                    </div><!-- end footer-shared -->
+                                </div><!-- end col-md-4 -->
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="footer-shared">         
+                                        <div class="footer__title">
+                                            <h3 class="footer__title-title">Endereço</h3>
+                                        </div><!-- end footer__title -->
+                                        <div class="ftp__links menu__links clearfix">
+                                            <address>
+                                               
+                                                   Rua xxxx  <br>
+                                                
+                                               
+                                                    Número: 458<br>
+                                               
+                                               
+                                                    Complemento <br>
+                                           
+                                                <abbr title="Phone">tel:</abbr>
+                                               
+                                                    (254) 8558-5844<br>
+                                                
+                                                <br>
+                                            </address>
+                                            <a class="mt-10px" style="color:#fff;"><i class="fas fa-envelope ml-10px"></i> 
+                                               
+                                                        contato@oneseg.com.br<br>
+                                                
+                                            </a>
+                                        </div><!-- end ftp__links -->
+                                    </div><!-- end footer-shared -->
+                                </div><!-- end col-md-5 -->
+                            </div><!-- end row -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="copyright-shared">
+                                        <div class="col-md-8 no-padding-lr>
+                                            <p class="copy__desc">&copy;Copyright <?php echo date('Y'); ?> Awee Business 2021 Todos os Direitos Reservados.</p>
+                                        </div><!-- end col-md-8 -->
+                                        <div class="col-md-4 text-right no-padding-lr">
+                                            <ul class="copy__links">
+                                               
+                                                    <li><a href="https://www.facebook.com/{{$social->social_face}}"><i class="fab fa-facebook-f"></i></a></li>
+                                              
+                                             
+                                                    <li><a href="https://www.instagram.com/{{$social->social_instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                            
+                                               
+                                                    <li><a href="https://www.linkedin.com/{{$social->social_twitter}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                              
+                                            </ul>
+                                        </div><!-- end col-md-4 -->
+                                    </div><!-- end copyright-shared -->
+                                </div><!-- end col-md-12 -->
+                            </div><!-- end row -->
+                        </div><!-- container -->
+                    </div><!-- end footer-fluid -->
+                </section><!-- end footer-area -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/magnificpopup.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <!-- Slider Revolution core JavaScript files -->
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="js/rev-slider-script-2.js"></script>
+    <script>
+        // counter up
+        $('.counter').counterUp({
+            delay: 50,
+            time: 5000
+        });
+    </script>
+
+    </body>
+</html>
