@@ -293,13 +293,27 @@
                         height: 100vh;
                     }
 
+                    .main{
+                        display:flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
                      #os_img_2{
-                       left: 20%;
+                       /* left: 20%;
                        right: initial;
                        bottom: 0;
                        position: initial;
                        bottom: 0 i !important;
-                       height: 40% !important;
+                       height: 40% !important; */
+                       position: inherit;
+                       width: 350px !important;
+                       float: none;
+                       height: 399px !important;
+                       bottom: initial;
+                       right: initial;
+                       left: initial;
                    }
                    .banner{
                     position: absolute;
@@ -310,6 +324,7 @@
                     flex-direction: column;
                     align-items: center;
                     justify-content: flex-start !important;
+                    z-index: 1;
                    }
                    .arruma{
                        width: 100%;
@@ -351,19 +366,28 @@
             </style>
 
            <div class="think-area banner-area " id="os_img" >
-                <img src="./images/fundo-m-invertido.png" id="os_img_2" 
-                style="height: 87%; position: absolute; bottom: 0; right: 0;">
-                <div class="banner">
-                    <h3 style="color: white; font-weight: bold; font-size: 28px;
-                                text-shadow: black 0.4em 0.2em 0.8em;"><fontsninja-text id="fontsninja-text-133" class="fontsninja-family-1638">AMPLIE SEU OLHAR!</fontsninja-text></h3>
-                    <h2 class="arruma" style="color: white; font-weight: 32px; font-weight: 900; margin-top: 25px; margin-bottom: 25px;
-                                text-shadow: black 0.4em 0.2em 0.8em;"><fontsninja-text id="fontsninja-text-134" class="fontsninja-family-1640">ASSESSORIA PARA CRIAÇÃO DE CORRETORAS DE SEGUROS EM ESCRITÓRIOS DE INVESTIMENTOS.</fontsninja-text></h2>
-                    <div class="avivon-btn">
-                        <a href="#contact" class="avivon__btn link-contact"><fontsninja-text id="fontsninja-text-136" class="fontsninja-family-1638">
-                            Vamos lá</fontsninja-text><span class="fontello icon-angle-double-right"></span><fontsninja-text id="fontsninja-text-136" class="fontsninja-family-1638">
-                        </fontsninja-text></a>
-                    </div><!-- end avivon-btn -->
-                        
+                <div class="main">
+                    <img src="./images/fundo-m-invertido.png" id="os_img_2" style="height: 87%; position: absolute; bottom: 0; right: 0;">
+                    <div class="banner">
+                        <h3 style="color: white; font-weight: bold; font-size: 28px;
+                                                    text-shadow: black 0.4em 0.2em 0.8em;">
+                            <fontsninja-text id="fontsninja-text-133" class="fontsninja-family-1638">AMPLIE SEU OLHAR!</fontsninja-text>
+                        </h3>
+                        <h2 class="arruma" style="color: white; font-weight: 32px; font-weight: 900; margin-top: 25px; margin-bottom: 25px;
+                                                    text-shadow: black 0.4em 0.2em 0.8em;">
+                            <fontsninja-text id="fontsninja-text-134" class="fontsninja-family-1640">ASSESSORIA PARA CRIAÇÃO DE CORRETORAS
+                                DE SEGUROS EM ESCRITÓRIOS DE INVESTIMENTOS.</fontsninja-text>
+                        </h2>
+                        <div class="avivon-btn">
+                            <a href="#contact" class="avivon__btn link-contact">
+                                <fontsninja-text id="fontsninja-text-136" class="fontsninja-family-1638">
+                                    Vamos lá</fontsninja-text><span class="fontello icon-angle-double-right"></span>
+                                <fontsninja-text id="fontsninja-text-136" class="fontsninja-family-1638">
+                                </fontsninja-text>
+                            </a>
+                        </div><!-- end avivon-btn -->
+                    
+                    </div>
                 </div>
             </div>
             <!-- end rev-slider-2 -->
